@@ -6,7 +6,7 @@ function xmldb_local_auto_badge_upgrade($oldversion)
     global $DB;
     $dbman = $DB->get_manager();
 
-    if ($oldversion < 2025101001) {
+    if ($oldversion < 2025101604) {
         // mendefinisikan tabel local_auto_badge_evidence untuk dibuat.
         $table = new xmldb_table('local_auto_badge_evidence');
 
@@ -78,7 +78,7 @@ function xmldb_local_auto_badge_upgrade($oldversion)
         }
 
         // Auto savepoint tercapai.
-        upgrade_plugin_savepoint(true, 2025101001, 'local', 'auto_badge');
+        upgrade_plugin_savepoint(true, 2025101604, 'local', 'auto_badge');
     }
 
     return true;
